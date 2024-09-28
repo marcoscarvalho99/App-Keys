@@ -67,10 +67,7 @@ class CreateActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_create)
 
-        binding.buttonvoltar.setOnClickListener {
-            setResult(RESULT_CANCELED)
-            finish()
-        }
+
         binding.buttoncadastrar.isEnabled = false // Esconde o botão inicialmente
 
         binding.buttoncadastrar.setOnClickListener {
@@ -84,6 +81,11 @@ class CreateActivity : AppCompatActivity() {
         }
 
         verificacaoCamposDescricaoAndPassowrdIsEmpty()
+
+    }
+    override fun onBackPressed() {
+
+        super.onBackPressed()
 
     }
 }
